@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+<title>Tap Nine Games</title>
+</head>
+<body>
+    <header>
+        <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Tap Nine Games</a></h1>
+      </header>
+
+      <main>
+        <section class="center-list">
+          <article class="game-card">
+            <h2>Pixel Space</h2>
+            <img src="gifs/control.gif" alt="Galaxy Quest gameplay" class="game-gif" />
+            <img src="gifs/research.gif" alt="Pixel Runner gameplay" class="game-gif" />
+            <img src="gifs/data.gif" alt="Pixel Runner gameplay" class="game-gif" />
+            <p>Explore the universe and conquer planets in this epic space adventure.</p>
+          </article>
+        </section>
+      </main>
+
+<footer>
+ &copy; 2025 Tap Nine UG (haftungsbeschränkt) <br> <a href="./privacy.html" style="color:#ff6f61; text-decoration:none;">Datenschutzrichtlinie</a>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" style="display:none;">
+  <p>We use cookies to improve your experience. By using our site, you accept our <a href="/privacy.html" style="color:#ff6f61; text-decoration:underline;">Privacy Policy</a>.</p>
+  <button id="accept-cookies">Accept</button>
+</div>
+
+<script>
+  // Cookie Consent Logic
+  const consentKey = 'tapnine_cookie_consent';
+
+  function setCookieConsent() {
+    localStorage.setItem(consentKey, 'true');
+    document.getElementById('cookie-consent').style.display = 'none';
+  }
+
+  function checkCookieConsent() {
+    if (!localStorage.getItem(consentKey)) {
+      document.getElementById('cookie-consent').style.display = 'flex';
+    }
+  }
+
+  document.getElementById('accept-cookies').addEventListener('click', setCookieConsent);
+
+  window.onload = checkCookieConsent;
+</script>
+
+</body>
+</html>
