@@ -1,4 +1,12 @@
 /* Base styles */
+@font-face {
+  font-family: 'Londrina Solid';
+  src: url('fonts/londrina_solid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,8 +16,13 @@
   body {
     background-color: #121212;
     color: #eaeaea;
-    font-family: 'VT323', monospace;
-    line-height: 1.6;
+    font-family: 'Londrina Solid', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,7 +50,8 @@
   header h1 {
     margin: 0;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.06em;
   }
   
   /* Navigation */
@@ -72,7 +86,7 @@
   }
 
   button {
-    font-family: 'VT323', monospace;
+    font-family: 'Londrina Solid', sans-serif;
   }
   
   .lang-toggle button {
@@ -113,12 +127,14 @@
   .game-card h2 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
   }
   
   .game-card p {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
   }
   
   /* Language-specific content sections */
@@ -165,8 +181,9 @@
     padding: 1rem 1.5rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    max-width: 320px;
-    font-size: 0.9rem;
+    max-width: 340px;
+    font-size: 1.05rem;
+    line-height: 1.6;
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -198,7 +215,8 @@
     background-color: #1a1a1a;
     text-align: center;
     padding: 1rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
+    line-height: 1.7;
     border-top: 1px solid #333;
     color: #aaa;
   }
