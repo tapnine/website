@@ -9,14 +9,29 @@
 <body>
 
     <header>
-        <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Tap Nine Games</a></h1>
-      </header>
-<main>
-<div class="lang-toggle">
-  <button onclick="switchLang('en')">English</button>
-  <button onclick="switchLang('de')">Deutsch</button>
-</div>
-</main>
+      <div class="header-inner">
+        <div class="header-brand">
+          <a href="./index.html" class="header-mark" aria-label="Tap Nine Games home">
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+            <span class="mark-cell"></span>
+          </a>
+          <div class="header-title">
+            <h1><a href="./index.html">Tap Nine Games</a></h1>
+          </div>
+        </div>
+        <div class="lang-toggle">
+          <button type="button" data-lang="en" class="is-active" onclick="switchLang('en')">EN</button>
+          <button type="button" data-lang="de" onclick="switchLang('de')">DE</button>
+        </div>
+      </div>
+    </header>
 
 
 <!-- English Content -->
@@ -161,35 +176,24 @@
 
 <script>
     function switchLang(lang) {
-      const allLangContents = document.querySelectorAll('.lang-content');
-      allLangContents.forEach(el => {
+      document.querySelectorAll('.lang-content').forEach(el => {
         el.classList.remove('active');
       });
-  
       const selectedLang = document.getElementById(lang);
       if (selectedLang) {
         selectedLang.classList.add('active');
       }
+
+      document.querySelectorAll('.lang-toggle button').forEach(btn => {
+        btn.classList.toggle('is-active', btn.dataset.lang === lang);
+      });
     }
   </script>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const hash = window.location.hash;
-  
-    const enSection = document.getElementById("en");
-    const deSection = document.getElementById("de");
-  
-    // Hide both first
-    enSection.classList.remove("active");
-    deSection.classList.remove("active");
-  
-    // Show based on URL hash
-    if (hash === "#de") {
-      deSection.classList.add("active");
-    } else {
-      enSection.classList.add("active");
-    }
+    const initialLang = window.location.hash === "#de" ? "de" : "en";
+    switchLang(initialLang);
   });
   </script>
 
