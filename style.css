@@ -390,24 +390,45 @@ main {
   border: 1px solid #2a2a2a;
 }
 
-/* Play Store CTA */
-.cta {
-  display: inline-block;
+/* Store CTAs */
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: auto;
-  align-self: flex-start;
-  background: var(--accent, #ff6f61);
-  color: #121212;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-weight: 700;
-  padding: 0.85rem 1.6rem;
+  padding: 0.85rem 1.4rem;
   border-radius: 999px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 1rem;
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+              background-color 0.15s ease, color 0.15s ease;
 }
 
-.cta:hover {
+.cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* Primary: Google Play — solid accent */
+.cta--play {
+  background: var(--accent, #ff6f61);
+  color: #121212;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.cta--play:hover {
   transform: translateY(-2px);
   text-decoration: none;
   color: #121212;
@@ -415,9 +436,35 @@ main {
               0 0 22px var(--accent, #ff6f61);
 }
 
-.cta:active {
+.cta--play:active {
   transform: translateY(2px);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* Secondary: App Store — outlined accent */
+.cta--apple {
+  background: #0d0d0d;
+  color: var(--accent, #ff6f61);
+  border-color: var(--accent, #ff6f61);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.cta--apple:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+  background: var(--accent, #ff6f61);
+  color: #121212;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.35),
+              0 0 22px var(--accent, #ff6f61);
+}
+
+.cta--apple:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+.cta--apple .cta-icon {
+  font-size: 1.2rem;
 }
 
 /* Language-specific content sections */
