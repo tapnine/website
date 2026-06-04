@@ -1016,12 +1016,15 @@ footer a:hover {
 }
 
 .apply-note {
-  margin: 1.75rem auto 0;
-  max-width: 560px;
+  width: 100%;
+  margin: 2.25rem 0 0;
+  padding: 1.25rem 1.5rem 0;
   color: #b8b8b8;
   font-size: 1rem;
   font-style: italic;
-  line-height: 1.65;
+  line-height: 1.7;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Responsive tweaks */
