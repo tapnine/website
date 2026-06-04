@@ -148,6 +148,37 @@ header::after {
   color: #4a4a4a;
 }
 
+/* Header "We're hiring" CTA (used on careers page) */
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #121212;
+  background: linear-gradient(90deg, #ff6f61 0%, #7c8cff 100%);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-cta::before {
+  content: "●";
+  font-size: 0.6rem;
+  color: #121212;
+}
+
+.header-cta:hover {
+  color: #121212;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -6px rgba(124, 140, 255, 0.6);
+}
+
 header h1 {
   margin: 0;
   font-weight: 700;
@@ -667,6 +698,332 @@ footer a:hover {
   color: #ff6f61;
 }
 
+/* Front-page hiring banner */
+.hiring-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: 18px;
+  border: 1px solid #2a2a2a;
+  background: linear-gradient(135deg, rgba(255, 111, 97, 0.12) 0%, rgba(124, 140, 255, 0.12) 100%);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.hiring-banner:hover {
+  text-decoration: none;
+  border-color: #7c8cff;
+  transform: translateY(-2px);
+}
+
+.hiring-banner:hover .cta--play {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.35),
+              0 0 22px var(--accent, #ff6f61);
+}
+
+.hiring-banner__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hiring-banner__kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff8a7a;
+  margin-bottom: 0.15rem;
+}
+
+.hiring-banner__title {
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 0;
+}
+
+.hiring-banner__sub {
+  color: #b8b8b8;
+  font-size: 1rem;
+  margin: 0.15rem 0 0;
+}
+
+.hiring-banner .cta {
+  flex-shrink: 0;
+}
+
+/* Careers / job posting page */
+.job {
+  max-width: 880px;
+}
+
+.job-hero {
+  margin-bottom: 3rem;
+}
+
+.job-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff8a7a;
+  margin-bottom: 0.75rem;
+}
+
+.job-title {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 0 0 0.6rem;
+}
+
+.job-title-accent {
+  background: linear-gradient(90deg, #ff6f61 0%, #7c8cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-tagline {
+  font-size: 1.3rem;
+  color: #d8d8d8;
+  margin: 0 0 1.25rem;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.job-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #2a2a2a;
+  color: #d8d8d8;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+
+.job-intro {
+  color: #d8d8d8;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+
+.job-hero-cta {
+  margin-top: 1.5rem;
+}
+
+.job-section {
+  margin-bottom: 2.75rem;
+}
+
+.job-h {
+  position: relative;
+  display: inline-block;
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.4rem;
+}
+
+.job-h::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ff6f61 0%, #7c8cff 100%);
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.job-req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.job-block {
+  background: linear-gradient(180deg, #1f1f1f 0%, #161616 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 1.5rem 1.6rem;
+}
+
+.job-block-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.job-block h4 {
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 0.85rem;
+}
+
+.job-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-block li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin: 0.45rem 0;
+  color: #d8d8d8;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  border-left: none;
+}
+
+.job-block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6f61 0%, #7c8cff 100%);
+}
+
+.job-block--bonus li::before {
+  background: #4a4a4a;
+}
+
+.job-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.job-checklist li {
+  position: relative;
+  padding-left: 2rem;
+  color: #d8d8d8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border-left: none;
+}
+
+.job-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: #7c8cff;
+}
+
+.job-fit {
+  color: #d8d8d8;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+
+.job-comp {
+  color: #d8d8d8;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.job-comp strong {
+  color: #fff;
+}
+
+/* Apply box */
+.apply-box {
+  scroll-margin-top: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid #2a2a2a;
+  background: linear-gradient(135deg, rgba(255, 111, 97, 0.1) 0%, rgba(124, 140, 255, 0.1) 100%);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.apply-box h3 {
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.apply-box > p {
+  color: #d8d8d8;
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem;
+}
+
+.apply-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1.75rem;
+  max-width: 480px;
+  text-align: left;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.apply-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: #eaeaea;
+  font-size: 1.05rem;
+  border-left: none;
+}
+
+.apply-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ff8a7a;
+  font-weight: 700;
+}
+
+.apply-cta {
+  font-size: 1.05rem;
+  padding: 1rem 1.8rem;
+}
+
+.apply-note {
+  margin: 1.75rem auto 0;
+  max-width: 560px;
+  color: #b8b8b8;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
 /* Responsive tweaks */
 @media (max-width: 900px) {
   .game-card,
@@ -685,6 +1042,15 @@ footer a:hover {
 
   .game-card h3 {
     font-size: 1.9rem;
+  }
+
+  .job-grid,
+  .job-req-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-title {
+    font-size: 2.3rem;
   }
 }
 
@@ -728,6 +1094,23 @@ footer a:hover {
 
   .screenshot-strip img {
     height: 260px;
+  }
+
+  .job-title {
+    font-size: 2rem;
+  }
+
+  .job-tagline {
+    font-size: 1.1rem;
+  }
+
+  .apply-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .header-cta {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.9rem;
   }
 
   #cookie-consent {
