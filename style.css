@@ -351,6 +351,11 @@ main {
   --accent-soft: rgba(124, 140, 255, 0.22);
 }
 
+.game-card--deepmine {
+  --accent: #67e8f9;
+  --accent-soft: rgba(103, 232, 249, 0.22);
+}
+
 .game-card--boxer {
   --accent: #ffb347;
   --accent-soft: rgba(255, 179, 71, 0.22);
