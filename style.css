@@ -356,6 +356,11 @@ main {
   --accent-soft: rgba(255, 179, 71, 0.22);
 }
 
+.game-card--cartel {
+  --accent: #4ade80;
+  --accent-soft: rgba(74, 222, 128, 0.22);
+}
+
 /* Watermark emoji (decorative) */
 .game-card__watermark {
   position: absolute;
