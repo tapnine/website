@@ -1132,14 +1132,56 @@ footer a:hover {
   }
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+/* FlightSim 2D stays in the page for crawlers, painted in the page background. */
+.game-card.game-card--flightsim,
+.game-card.game-card--flightsim:hover {
+  position: static;
+  display: block;
+  margin: -1.25rem 0 0;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  gap: 0;
+  background: #121212;
   border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.game-card.game-card--flightsim::before,
+.game-card.game-card--flightsim::after {
+  content: none;
+  display: none;
+}
+
+.game-card.game-card--flightsim,
+.game-card.game-card--flightsim * {
+  color: #121212 !important;
+  -webkit-text-fill-color: #121212 !important;
+  background: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  text-decoration: none !important;
+  outline: none !important;
+  caret-color: #121212 !important;
+}
+
+.game-card.game-card--flightsim * {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  gap: 0 !important;
+}
+
+.game-card.game-card--flightsim ::selection {
+  background: #121212;
+  color: #121212;
 }
