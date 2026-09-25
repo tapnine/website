@@ -1185,3 +1185,16 @@ footer a:hover {
   background: #121212;
   color: #121212;
 }
+
+.game-card.game-card--flightsim h3 {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 2.25rem !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.game-card.game-card--flightsim h3::selection {
+  background: #fff;
+  color: #121212;
+}
