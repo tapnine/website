@@ -1132,9 +1132,9 @@ footer a:hover {
   }
 }
 
-/* FlightSim 2D stays in the page for crawlers, painted in the page background. */
-.game-card.game-card--flightsim,
-.game-card.game-card--flightsim:hover {
+/* Hidden titles stay in the page for crawlers, painted in the page background. */
+.game-card:is(.game-card--flightsim, .game-card--atom),
+.game-card:is(.game-card--flightsim, .game-card--atom):hover {
   position: static;
   display: block;
   margin: -1.25rem 0 0;
@@ -1149,14 +1149,14 @@ footer a:hover {
   pointer-events: none;
 }
 
-.game-card.game-card--flightsim::before,
-.game-card.game-card--flightsim::after {
+.game-card:is(.game-card--flightsim, .game-card--atom)::before,
+.game-card:is(.game-card--flightsim, .game-card--atom)::after {
   content: none;
   display: none;
 }
 
-.game-card.game-card--flightsim,
-.game-card.game-card--flightsim * {
+.game-card:is(.game-card--flightsim, .game-card--atom),
+.game-card:is(.game-card--flightsim, .game-card--atom) * {
   color: #121212 !important;
   -webkit-text-fill-color: #121212 !important;
   background: transparent !important;
@@ -1169,7 +1169,7 @@ footer a:hover {
   caret-color: #121212 !important;
 }
 
-.game-card.game-card--flightsim * {
+.game-card:is(.game-card--flightsim, .game-card--atom) * {
   margin: 0 !important;
   padding: 0 !important;
   font-size: 0.75rem !important;
@@ -1181,12 +1181,12 @@ footer a:hover {
   gap: 0 !important;
 }
 
-.game-card.game-card--flightsim ::selection {
+.game-card:is(.game-card--flightsim, .game-card--atom) ::selection {
   background: #121212;
   color: #121212;
 }
 
-.game-card.game-card--flightsim h3 {
+.game-card:is(.game-card--flightsim, .game-card--atom) h3 {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   font-size: 2.25rem !important;
@@ -1194,7 +1194,7 @@ footer a:hover {
   letter-spacing: 0.05em !important;
 }
 
-.game-card.game-card--flightsim h3::selection {
+.game-card:is(.game-card--flightsim, .game-card--atom) h3::selection {
   background: #fff;
   color: #121212;
 }
