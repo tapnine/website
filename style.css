@@ -83,38 +83,25 @@ header::after {
 
 .header-mark {
   flex-shrink: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 3px;
-  padding: 0;
-  width: 52px;
-  height: 52px;
+  display: block;
+  width: 64px;
+  height: 64px;
   background: transparent;
   text-decoration: none;
   transition: transform 0.2s ease;
+}
+
+.header-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .header-mark:hover {
   text-decoration: none;
   transform: translateY(-1px) rotate(-3deg);
 }
-
-.mark-cell {
-  border-radius: 2px;
-  background-image: linear-gradient(135deg, #ff6f61 0%, #7c8cff 100%);
-  background-size: 300% 300%;
-}
-
-.mark-cell:nth-child(1) { background-position: 0% 0%; }
-.mark-cell:nth-child(2) { background-position: 50% 0%; }
-.mark-cell:nth-child(3) { background-position: 100% 0%; }
-.mark-cell:nth-child(4) { background-position: 0% 50%; }
-.mark-cell:nth-child(5) { background-position: 50% 50%; }
-.mark-cell:nth-child(6) { background-position: 100% 50%; }
-.mark-cell:nth-child(7) { background-position: 0% 100%; }
-.mark-cell:nth-child(8) { background-position: 50% 100%; }
-.mark-cell:nth-child(9) { background-position: 100% 100%; }
 
 .header-title {
   display: flex;
@@ -1081,9 +1068,8 @@ footer a:hover {
   }
 
   .header-mark {
-    width: 44px;
-    height: 44px;
-    gap: 2px;
+    width: 52px;
+    height: 52px;
   }
 
   .header-stats {
