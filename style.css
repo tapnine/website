@@ -1119,8 +1119,8 @@ footer a:hover {
 }
 
 /* Hidden titles stay in the page for crawlers, painted in the page background. */
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator),
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator):hover {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater),
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater):hover {
   position: static;
   display: block;
   margin: -1.25rem 0 0;
@@ -1135,14 +1135,14 @@ footer a:hover {
   pointer-events: none;
 }
 
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator)::before,
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator)::after {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater)::before,
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater)::after {
   content: none;
   display: none;
 }
 
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator),
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator) * {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater),
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater) * {
   color: #121212 !important;
   -webkit-text-fill-color: #121212 !important;
   background: transparent !important;
@@ -1155,7 +1155,7 @@ footer a:hover {
   caret-color: #121212 !important;
 }
 
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator) * {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater) * {
   margin: 0 !important;
   padding: 0 !important;
   font-size: 0.75rem !important;
@@ -1167,12 +1167,12 @@ footer a:hover {
   gap: 0 !important;
 }
 
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator) ::selection {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater) ::selection {
   background: #121212;
   color: #121212;
 }
 
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator) h3 {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater) h3 {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   font-size: 2.25rem !important;
@@ -1180,7 +1180,7 @@ footer a:hover {
   letter-spacing: 0.05em !important;
 }
 
-.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator) h3::selection {
+.game-card:is(.game-card--flightsim, .game-card--atom, .game-card--crystal, .game-card--gladiator, .game-card--skater) h3::selection {
   background: #fff;
   color: #121212;
 }
