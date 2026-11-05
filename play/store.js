@@ -5,15 +5,13 @@
 
   // Events Manager → Data sources → your pixel → Settings. Leave empty to only log to the console.
   const META_PIXEL_ID = '1147099554499969';
-  // Shared with the cookie banner on the main site.
-  const CONSENT_KEY = 'tapnine_cookie_consent';
 
   const concept = JSON.parse(document.getElementById('concept').textContent);
   const slug = concept.slug || location.pathname.split('/').filter(Boolean).pop();
 
   // ---- Tracking ----------------------------------------------------------------------------
 
-  // Meta's script isn't loaded until the visitor accepts cookies, so events wait here until then.
+  // Events wait here until Meta's script is loaded.
   const pending = [];
   let pixelLoaded = false;
   const sentOnce = new Set();
@@ -45,41 +43,6 @@
     window.fbq('init', META_PIXEL_ID);
     pixelLoaded = true;
     pending.splice(0).forEach(([event, payload, custom]) => send(event, payload, custom));
-  }
-
-  function readConsent() {
-    try { return localStorage.getItem(CONSENT_KEY); } catch { return null; }
-  }
-
-  function writeConsent(value) {
-    try { localStorage.setItem(CONSENT_KEY, value); } catch { /* storage blocked */ }
-  }
-
-  function setupConsent() {
-    const stored = readConsent();
-    if (stored === 'true') return loadPixel();
-    if (stored === 'false') return;
-
-    const bar = el('div', 'consent');
-    const text = el('p', null, 'We use cookies to measure our ads. ');
-    const policy = el('a', null, 'Privacy');
-    policy.href = '../../privacy.html';
-    text.append(policy);
-    const decline = el('button', null, 'Decline');
-    const accept = el('button', 'accept', 'Accept');
-    decline.type = accept.type = 'button';
-    decline.addEventListener('click', () => {
-      writeConsent('false');
-      pending.length = 0;
-      bar.remove();
-    });
-    accept.addEventListener('click', () => {
-      writeConsent('true');
-      loadPixel();
-      bar.remove();
-    });
-    bar.append(text, decline, accept);
-    document.body.append(bar);
   }
 
   // ---- Rendering ---------------------------------------------------------------------------
@@ -231,8 +194,8 @@
     track('ScreenshotOpen', { custom: true, once: true });
   }
 
+  loadPixel();
   render();
   track('PageView');
   track('ViewContent');
-  setupConsent();
 })();
